@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"encoding/hex"
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
@@ -12,12 +11,19 @@ var htmlTemplate []byte
 var jsCode []byte
 
 func init() {
-	htmlTemplate, _ = ioutil.ReadFile("../test_report.html.template")
-	jsCode, _ = ioutil.ReadFile("../test_report.js")
+	htmlTemplate, _ = os.ReadFile("../test_report.html.template")
+	jsCode, _ = os.ReadFile("../test_report.js")
 }
 
 func main() {
-	outputFile1, _ := os.Create("../embedded_assets.go")
+	outputFile1, err := os.Create("../embedded_assets.go")
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	defer outputFile1.Close()
 	writer := bufio.NewWriter(outputFile1)
 	defer func() {
 		if err := writer.Flush(); err != nil {
