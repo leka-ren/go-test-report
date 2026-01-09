@@ -137,7 +137,7 @@
         .cardContainer.testGroupList .testGroupRow span.testStatus {
             font-size: 1.2em;
             font-weight: bold;
-            color: #139e13;
+            color: #e0c3af;
             pointer-events: none;
             display: inline-block;
             overflow: hidden;
@@ -172,7 +172,7 @@
 
         .cardContainer.testGroupList .testGroupRow {
             position: relative;
-            border-left: 4px #43c143 solid;
+            border-left: 4px #e0c3af solid;
         }
 
         .cardContainer.testGroupList .testGroupRow.skipped {
@@ -199,8 +199,8 @@
             font-family: monospace;
             padding: 10px;
             background-color: #424242;
-            color: #1aff00;
-            border-bottom: 1px #1aff00 dotted;
+            color: #e0c3af;
+            border-bottom: 1px #ffb37cff dotted;
             overflow: auto;
             font-size: 1.1em;
         }
